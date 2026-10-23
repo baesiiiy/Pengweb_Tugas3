@@ -75,6 +75,15 @@
                 </table>
             </div>
 
+            <div class="query-box">
+                <h3>Query String</h3>
+                <p>
+                    Data berikut berasal dari URL yang dikirim
+                    melalui formulir pendaftaran menggunakan metode GET.
+                </p>
+                <code id="query-string">-</code>
+            </div>
+
             <div class="detail-actions">
                 <a href="index.html" class="primary-button">Kembali ke Beranda</a>
                 <button type="button" class="secondary-button"
@@ -82,8 +91,9 @@
             </div>
 
             <p class="detail-note">
-                Halaman ini merupakan simulasi pendaftaran. Data ditampilkan
-                dari URL dan belum disimpan ke database.
+                Data peserta ditampilkan berdasarkan Query String
+                dari formulir pendaftaran. Pastikan formulir menggunakan
+                method GET dan nama setiap input sesuai.
             </p>
         </section>
     </main>
@@ -114,6 +124,9 @@
                 element.textContent = value || "-";
             }
         });
+
+        document.getElementById("query-string").textContent =
+            window.location.search || "Tidak ada data yang dikirim.";
     </script>
 </body>
 </html>
